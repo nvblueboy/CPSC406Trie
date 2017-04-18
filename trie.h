@@ -14,6 +14,7 @@ public:
   void addWord(string s);
   bool isWord(string s);
   node* getBaseNode();
+  vector<string>* getWordsFromBase(string s);
 private:
   node* baseNode;
 };

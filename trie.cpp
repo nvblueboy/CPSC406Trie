@@ -48,6 +48,23 @@ bool trie::isWord(string s)
   }
 }
 
+vector<string>* trie::getWordsFromBase(string s)
+{
+  vector<string>* output = new vector<string>();
+  node* curr = baseNode;
+  for (int i = 0;i<s.length(); ++i)
+  {
+    char c = s[i];
+    if (!curr->hasChild(c))
+    {
+      return output;
+    } else {
+      curr = curr->getNext(c);
+    }
+  }
+  curr->getAllWords(output,s);
+  return output;
+}
 
 node* trie::getBaseNode()
 {

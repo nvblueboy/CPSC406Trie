@@ -17,6 +17,7 @@ public:
   bool isEnd();
   void setEnd(bool b);
   node* addChild(char c);
+  void getAllWords(vector<string>* output, string soFar);
   vector<char> getChildren();
 private:
   map<char, vector<node*>> next;
